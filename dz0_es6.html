@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+
+        class NumberSplit {
+            constructor(units, tens, hundreds) {
+                this.units = units;
+                this.tens = tens;
+                this.hundreds = hundreds;
+            }
+            /**
+             * Метод разбивает трехзначтое число на единици, десятки и сотни
+             */
+            slice(value) {
+                this.hundreds = Math.floor(value / 100);
+                this.tens = Math.floor((value % 100) / 10);
+                this.units = value % 10;
+            }
+        }
+        /** Функция проверки введенных данных
+         * Проверяет чтобы число было целым и попадало в диапазон от 0 до 999
+         */
+
+        function checkNumber(x) {
+            if (Number.isInteger(x) && x <= 999 && x >= 0) {
+                discharge.slice(x);
+            }
+            else {
+                console.log("не принято!")
+            }
+
+        }
+        let discharge = new NumberSplit('', '', '');
+        let value = +prompt('Введите число');
+        checkNumber(value);
+        console.log(discharge);
+
+    </script>
+</body>
+
+</html>
